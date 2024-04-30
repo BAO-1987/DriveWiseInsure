@@ -1,0 +1,77 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.safety {
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    max-width: 533px;
+    gap: 36px;
+    translate: 0 -6px;
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    align-items: center;
+    padding-left: 80px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 64px;
+      height: 64px;
+      background-image: url("../images/icons/respect.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--response {
+      &::before {
+        background-image: url("../images/icons/response.svg");
+      }
+    }
+
+    &--sanitation {
+      &::before {
+        background-image: url("../images/icons/sanitation.svg");
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    margin-bottom: 9px;
+  }
+
+  @include media(tablet) {
+    &__list {
+      gap: 24px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__images {
+      img {
+        aspect-ratio: 2/1;
+      }
+    }
+  }
+}

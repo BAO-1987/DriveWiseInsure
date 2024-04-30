@@ -1,0 +1,44 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+h1,
+h2,
+h3 {
+  overflow: hidden;
+  font-weight: var(--fw-900);
+  font-size: clamp(2.125rem, 1.5rem + 2.7778vi, 4rem);
+  line-height: 1.35;
+  letter-spacing: 0.025em;
+  color: var(--color-white);
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: clamp(1.875rem, 1.6667rem + 0.9259vi, 2.5rem);
+}
+
+h3 {
+  font-weight: var(--fw-600);
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+p {
+  font-size: 14px;
+}
+
+.content {
+  margin: 0 auto rem(48);
+  width: 100%;
+  max-width: 685px;
+  text-align: center;
+
+  p {
+    font-weight: var(--fw-600);
+    font-size: clamp(1.125rem, 1rem + 0.5556vi, 1.5rem);
+  }
+
+  @include media(tablet) {
+    margin-bottom: 30px;
+  }
+}

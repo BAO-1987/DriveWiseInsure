@@ -1,0 +1,128 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
+
+html,
+body {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+.page {
+  height: var(--vh);
+  font-family: var(--font-family-primary);
+  font-weight: var(--fw-400);
+  font-style: normal;
+  font-size: clamp(16px, 1vw, 20px);
+  line-height: 1.33;
+  letter-spacing: 0;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  font-optical-sizing: auto;
+  scroll-padding: var(--header-height);
+
+  &__body {
+    position: relative;
+    min-width: 320px;
+    min-height: var(--vh);
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background-color: rgba(39, 40, 43, 0.75);
+      opacity: 0;
+      transition: opacity 0.3s;
+      inset: 0;
+    }
+  }
+
+  &.open {
+    overflow: hidden;
+
+    > .page__body::before {
+      z-index: 5;
+      opacity: 1;
+    }
+  }
+}
+
+.section {
+  padding: rem(60) 0;
+
+  @include media(tablet) {
+    padding: rem(30) 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  width: 100%;
+  max-width: var(--container-width);
+}
+
+.site-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
+  min-height: var(--vh);
+}
+
+.main {
+  &--policy {
+    padding-top: calc(var(--header-height) - 1px);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 292px;
+
+  @include media(tablet-wide) {
+    max-width: 220px;
+  }
+}
+
+.is-scrolling {
+  scrollbar-color: var(--color-red-600) var(--color-white);
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: var(--color-red-600);
+  }
+
+  @include media(mobile-l) {
+    padding: 15px;
+  }
+}
+
+.overlay {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+     background: linear-gradient(270deg, rgba(22, 17, 12, 0) 71.546%, rgb(22, 17, 12) 100%),
+        linear-gradient(90deg, rgba(22, 17, 12, 0) 72.268%, rgb(22, 17, 12) 100%),
+        linear-gradient(180deg, rgb(22, 17, 12), rgba(22, 17, 12, 0) 14.754%),
+        linear-gradient(180deg, rgba(22, 17, 12, 0) 80.164%, rgb(22, 17, 12) 100%);
+    inset: 0;
+  }
+}

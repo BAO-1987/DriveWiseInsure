@@ -1,0 +1,75 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.gallery {
+  $root: &;
+
+  &__content {
+    max-width: 960px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: rem(48);
+    gap: 24px;
+
+    &:has(li:hover) > li:not(:hover) {
+      opacity: 0.8;
+    }
+
+    li {
+      position: relative;
+      transition: opacity 0.3s linear;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background: var(--gradient-grey);
+        inset: 0;
+      }
+
+      &:last-child {
+        grid-column: 3 span;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    margin: 0 auto;
+  }
+
+  &--main {
+    li {
+      &:last-child {
+        grid-column: auto;
+      }
+
+      &:nth-child(4),
+      &:nth-child(5) {
+        grid-column: 3 span;
+      }
+    }
+
+    #{$root}__list {
+      margin-bottom: 0;
+    }
+  }
+
+  @include media(tablet) {
+    &__list {
+      margin-bottom: 24px;
+    }
+  }
+
+  @include media(mobile-l) {
+    &__list {
+      gap: 16px;
+    }
+  }
+}

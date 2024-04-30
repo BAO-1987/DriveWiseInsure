@@ -1,0 +1,51 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.footer {
+  padding: rem(64) 0;
+
+  &__copy {
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .logo {
+    margin-bottom: 4px;
+  }
+
+  a:not([class]) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 38px;
+    width: fit-content;
+    font-size: 16px;
+    line-height: 1.32;
+    gap: 12px;
+
+    &::before {
+      content: "";
+      position: relative;
+      width: 24px;
+      height: 24px;
+      background-image: url("../images/icons/mail.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media(tablet) {
+    padding: 30px 0;
+  }
+
+  @include media(mobile-l) {
+    a:not([class]) {
+      margin-bottom: 0;
+    }
+
+    &__copy {
+      text-align: center;
+    }
+  }
+}

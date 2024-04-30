@@ -1,0 +1,44 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins" as *;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: var(--gradient-grey);
+    inset: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: calc(var(--radius-main) * 2);
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    h3 {
+      margin-bottom: 16px;
+    }
+
+    p {
+      letter-spacing: -0.008em;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

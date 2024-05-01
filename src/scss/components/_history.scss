@@ -1,0 +1,20 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.history {
+  &__inner {
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    width: 100%;
+    max-width: 572px;
+    background-color: var(--color-white);
+  }
+}

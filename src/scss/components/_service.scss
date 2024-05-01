@@ -1,0 +1,51 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.service {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    counter-increment: choose-counter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    background-color: var(--color-blue-50);
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 24px;
+      top: 24px;
+      width: 48px;
+      height: 48px;
+      background-image: url("../images/icons/arrow.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      margin-top: auto;
+      content: counter(choose-counter, decimal-leading-zero);
+      position: relative;
+      align-self: end;
+      right: 24px;
+      font-weight: var(--fw-400);
+      font-size: 100px;
+      line-height: 1.2;
+    }
+  }
+
+  h3 {
+    width: 100%;
+    max-width: 185px;
+  }
+}

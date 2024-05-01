@@ -2,50 +2,20 @@
 @use "../utils/mixins/" as *;
 
 .footer {
-  padding: rem(64) 0;
+  padding: rem(88) 0 24px;
 
-  &__copy {
-    p {
-      font-size: 16px;
-    }
-  }
-
-  .logo {
-    margin-bottom: 4px;
-  }
-
-  a:not([class]) {
+  &__inner {
     display: flex;
     align-items: center;
-    margin-bottom: 38px;
-    width: fit-content;
-    font-size: 16px;
-    line-height: 1.32;
-    gap: 12px;
+    justify-content: space-between;
 
-    &::before {
-      content: "";
-      position: relative;
-      width: 24px;
-      height: 24px;
-      background-image: url("../images/icons/mail.svg");
-      background-position: 0 0;
-      background-size: cover;
-      background-repeat: no-repeat;
+    p {
+      opacity: 1;
     }
   }
 
-  @include media(tablet) {
-    padding: 30px 0;
-  }
-
-  @include media(mobile-l) {
-    a:not([class]) {
-      margin-bottom: 0;
-    }
-
-    &__copy {
-      text-align: center;
-    }
+  &__list {
+    display: flex;
+    gap: 24px;
   }
 }

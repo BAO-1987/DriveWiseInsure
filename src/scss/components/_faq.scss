@@ -41,17 +41,6 @@
     cursor: pointer;
     gap: 16px;
 
-    &::after {
-      @include mask;
-
-      position: relative;
-      display: block;
-      mask-image: url("../images/icons/chevron-down.svg");
-      min-width: 32px;
-      min-height: 32px;
-      background-color: var(--color-dark-900);
-      transition: transform 0.3s linear;
-    }
 
     + div {
       padding: 1.7rem 1.6rem 21px 30px;

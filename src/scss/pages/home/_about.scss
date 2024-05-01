@@ -1,0 +1,19 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.about {
+  &__inner {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 495px;
+  }
+
+  &__image {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+  }
+}

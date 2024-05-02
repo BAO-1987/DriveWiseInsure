@@ -1,0 +1,44 @@
+@use "../../utils/functions/" as *;
+@use "../../utils/mixins/" as *;
+
+.missions {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+
+  &__item {
+    counter-increment: service-counter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    height: 100%;
+    background-color: var(--color-blue-50);
+
+    &::after {
+      margin-top: auto;
+      content: counter(service-counter, decimal-leading-zero);
+      position: relative;
+      align-self: end;
+      right: 24px;
+      font-weight: var(--fw-400);
+      font-size: 95px;
+      line-height: 1.2;
+    }
+  }
+
+  // h2 {
+  //   width: 100%;
+  //   max-width: 700px;
+  //   font-size: clamp(1.75rem, 1.3333rem + 1.8519vi, 3rem);
+
+  //   span {
+  //     opacity: 0.5;
+  //   }
+  // }
+}

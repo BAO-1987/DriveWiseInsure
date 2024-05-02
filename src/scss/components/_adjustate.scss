@@ -1,0 +1,21 @@
+@use "../utils/functions/" as *;
+@use "../utils/mixins/" as *;
+
+.adjustate {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: var(--radius-big);
+    padding: 24px;
+    background-color: var(--color-blue-50);
+  }
+
+  &__image {
+    margin-bottom: 32px;
+  }
+}

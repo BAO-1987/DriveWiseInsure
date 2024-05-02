@@ -2,6 +2,8 @@
 @use "../utils/mixins/" as *;
 
 .history {
+  $root: &;
+
   &__inner {
     position: relative;
   }
@@ -16,5 +18,51 @@
     width: 100%;
     max-width: 572px;
     background-color: var(--color-white);
+  }
+
+  &__benefits {
+    display: flex;
+    gap: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 803px;
+    gap: 24px;
+  }
+
+  &__item {
+    padding: 24px;
+
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      margin-bottom: 16px;
+      width: 128px;
+      height: 128px;
+      background-image: url("../images/icons/gears.svg");
+      background-position: 0 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &--benefit {
+      &::before {
+        background-image: url("../images/icons/benefit.svg");
+      }
+    }
+  }
+
+  &--benefits {
+    #{$root}__content {
+      inset: 24px auto auto 24px;
+    }
+
+    #{$root}__image {
+      margin-bottom: 48px;
+    }
   }
 }

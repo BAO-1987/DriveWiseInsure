@@ -25,3 +25,13 @@ h3 {
 p {
   opacity: 0.8;
 }
+
+.title {
+  width: 100%;
+  max-width: 700px;
+  font-size: clamp(1.75rem, 1.3333rem + 1.8519vi, 3rem);
+
+  span {
+    opacity: 0.5;
+  }
+}

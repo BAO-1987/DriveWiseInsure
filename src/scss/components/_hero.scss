@@ -15,22 +15,15 @@
     max-width: 584px;
   }
 
-  &__image {
-    overflow: hidden;
-    border-radius: var(--radius-big);
-  }
-
   p {
     margin-bottom: 48px;
     width: 100%;
     max-width: 493px;
   }
 
-
-
   &--home {
     #{$root}__content {
-      max-width:  495px;
+      max-width: 495px;
 
       p {
         max-width: 100%;
@@ -44,24 +37,31 @@
     }
   }
 
-  // @include media(tablet) {
-  //   &__inner {
-  //     min-height: 450px;
-  //   }
+  @include media(mobile-l) {
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
 
-  //   &__content {
-  //     max-width: 100%;
-  //     margin-bottom: 0;
-  //   }
-  // }
+    &__content {
+      max-width: 100%;
 
-  // @include media(mobile-m) {
-  //   &__inner {
-  //     min-height: 400px;
-  //   }
+      p {
+        margin-bottom: 24px;
+        max-width: 100%;
+      }
+    }
 
-  //   .btn {
-  //     max-width: 100%;
-  //   }
-  // }
+    &--home {
+      #{$root}__content {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    .btn {
+      max-width: 100%;
+    }
+  }
 }

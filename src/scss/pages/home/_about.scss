@@ -12,8 +12,13 @@
     max-width: 493px;
   }
 
-  &__image {
-    overflow: hidden;
-    border-radius: var(--radius-big);
+  @include media(mobile-l) {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
   }
 }

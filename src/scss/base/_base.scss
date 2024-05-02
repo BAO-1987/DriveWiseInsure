@@ -83,4 +83,12 @@ body {
 .image {
   overflow: hidden;
   border-radius: var(--radius-big);
+
+  img {
+    width: 100%;
+
+    @include media(mobile-l) {
+      aspect-ratio: 16/9;
+    }
+  }
 }

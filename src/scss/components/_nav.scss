@@ -48,7 +48,6 @@
   }
 
   @include media(tablet) {
-
     &__inner {
       position: fixed;
       right: 0;
@@ -57,7 +56,7 @@
       flex-direction: column;
       justify-content: flex-start;
       overflow-y: auto;
-      padding-top: calc(var(--header-height) * 1.6);
+      padding-top: calc(var(--header-height) * 1.2);
       width: 100%;
       height: var(--vh);
       max-width: 350px;

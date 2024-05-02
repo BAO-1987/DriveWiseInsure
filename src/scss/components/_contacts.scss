@@ -56,4 +56,10 @@
     margin-bottom: 16px;
     gap: 16px;
   }
+
+  @include media(mobile-m) {
+    &__rows {
+      grid-template-columns: 1fr;
+    }
+  }
 }

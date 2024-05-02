@@ -18,56 +18,5 @@
   &.scroll {
     box-shadow: 0 0 0 2px rgba(44, 46, 53, 0.12);
   }
-
-  .nav__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @include media(tablet) {
-    padding: 16px 0;
-
-    .nav__inner {
-      position: fixed;
-      right: 0;
-      top: 0;
-      z-index: -1;
-      flex-direction: column;
-      justify-content: flex-start;
-      overflow-y: auto;
-      padding-top: calc(var(--header-height) * 1.6);
-      width: 100%;
-      height: var(--vh);
-      max-width: 350px;
-      background-color: var(--color-black);
-      transform: translateX(150%);
-      transition-property: transform;
-      transition-duration: 0.4s;
-    }
-
-    .nav__list {
-      z-index: -1;
-      flex-direction: column;
-      margin: 0;
-    }
-
-    .nav__item {
-      margin-bottom: 30px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-    }
-
-    .nav__link {
-      &::before {
-        bottom: -15px;
-      }
-    }
-
-    .nav__btns {
-      flex-direction: column;
-    }
-  }
+ 
 }

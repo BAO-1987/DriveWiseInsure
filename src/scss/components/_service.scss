@@ -2,6 +2,8 @@
 @use "../utils/mixins/" as *;
 
 .service {
+  $root: &;
+
   &__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -14,9 +16,10 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 100%;
     border-radius: var(--radius-big);
     padding: 24px;
+    height: 100%;
+    min-height: 417px;
     background-color: var(--color-blue-50);
 
     &::before {
@@ -33,13 +36,12 @@
     }
 
     &::after {
-      margin-top: auto;
       content: counter(service-counter, decimal-leading-zero);
-      position: relative;
-      align-self: end;
-      right: 24px;
+      position: absolute;
+      right: 0;
+      bottom: -68px;
       font-weight: var(--fw-400);
-      font-size: 95px;
+      font-size: clamp(4.375rem, 2.4167rem + 8.7037vi, 10.25rem);
       line-height: 1.2;
     }
   }
@@ -52,5 +54,33 @@
     margin-bottom: 24px;
     width: 100%;
     max-width: 185px;
+  }
+
+  &--main,
+  &--option {
+    #{$root}__item {
+      &::before {
+        content: none;
+      }
+    }
+
+    h2 {
+      margin-bottom: 31px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      max-width: 100%;
+    }
+  }
+
+  &--option {
+    #{$root}__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    #{$root}__item {
+      min-height: 457px;
+    }
   }
 }

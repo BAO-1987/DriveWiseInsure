@@ -10,11 +10,10 @@
 
   &__content {
     position: absolute;
-    right: 24px;
-    bottom: 24px;
+    inset: auto 24px 24px auto;
     overflow: hidden;
     border-radius: var(--radius-big);
-    padding: 24px;
+    padding: 24px 40px;
     width: 100%;
     max-width: 572px;
     background-color: var(--color-white);
@@ -64,5 +63,9 @@
     #{$root}__image {
       margin-bottom: 48px;
     }
+  }
+
+  .title {
+    max-width: 381px;
   }
 }

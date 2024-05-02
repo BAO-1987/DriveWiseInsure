@@ -35,13 +35,13 @@
     position: relative;
     font-size: clamp(2.8125rem, 0.5136rem + 10.8182vi, 10.25rem);
     line-height: 1.21;
-    width: 100%;
-    max-width: 100%;
+    margin-bottom: 32px;
+
 
     &::before {
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -15px;
       left: 0;
       height: 1px;
       width: 100%;

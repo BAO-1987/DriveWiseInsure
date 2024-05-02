@@ -4,26 +4,20 @@
 .advantages {
   $root: &;
 
+  margin-bottom: 88px;
+
   &__inner {
     position: relative;
   }
 
   &__list {
     position: absolute;
-    inset: auto 24px 24px auto;
-  }
-
-  &__benefits {
-    display: flex;
-    gap: 32px;
-  }
-
-  &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     max-width: 803px;
-    gap: 24px;
+    gap: 16px;
+    inset: auto 24px 24px auto;
   }
 
   &__item {
@@ -31,15 +25,5 @@
     border-radius: var(--radius-big);
     padding: 24px;
     background-color: var(--color-white);
-  }
-
-  &--benefits {
-    #{$root}__content {
-      inset: 24px auto auto 24px;
-    }
-
-    #{$root}__image {
-      margin-bottom: 48px;
-    }
   }
 }

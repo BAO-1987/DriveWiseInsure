@@ -2,33 +2,25 @@
 @use "../utils/mixins" as *;
 
 .policy {
-  padding: rem(80) 0;
-
   &__content {
     &:not(:last-child) {
       margin-bottom: 24px;
     }
   }
 
-  h1,
-  h2 {
-    color: var(--color-orange-600);
-  }
-
   h1 {
-    margin-bottom: rem(48);
-    font-size: clamp(1.875rem, 1.6667rem + 0.9259vi, 2.5rem);
+    margin-bottom: rem(88);
   }
 
   h2 {
     margin-bottom: 24px;
-    font-weight: var(--fw-600);
     font-size: clamp(1.5625rem, 1.4583rem + 0.463vi, 1.875rem);
   }
 
   p,
   li {
-    font-size: 20px;
+    font-size: 16px;
+    opacity: 1;
   }
 
   ul {
@@ -44,8 +36,7 @@
     }
 
     &::marker {
-      content: "✓";
-      color: var(--color-orange-600);
+      content: "-";
     }
   }
 
@@ -57,12 +48,10 @@
 
   a {
     text-decoration: underline;
-    color: var(--color-orange-600);
+    color: var(--color-blue-600);
   }
 
   @include media(tablet) {
-    padding: 30px 0;
-
     h1 {
       margin-bottom: 30px;
     }

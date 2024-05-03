@@ -30,12 +30,7 @@
       }
     }
   }
-
-  &--gallery {
-    #{$root}__content {
-      max-width: 850px;
-    }
-  }
+ 
 
   @include media(mobile-l) {
     &__inner {
@@ -47,7 +42,7 @@
       max-width: 100%;
 
       p {
-        margin-bottom: 24px;
+        margin-bottom: 0;
         max-width: 100%;
       }
     }
@@ -55,6 +50,10 @@
     &--home {
       #{$root}__content {
         max-width: 100%;
+      }
+
+      p {
+        margin-bottom: 24px;
       }
     }
   }

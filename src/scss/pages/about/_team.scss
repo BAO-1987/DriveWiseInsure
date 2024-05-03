@@ -22,6 +22,7 @@
     overflow: hidden;
     margin-bottom: 23px;
     border-radius: var(--radius-big);
+    width: 100%;
   }
 
   h3 {
@@ -35,5 +36,40 @@
 
   p {
     opacity: 0.5;
+  }
+
+  @include media(tablet) {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      padding: 16px;
+
+      &:last-child {
+        grid-column: span 2;
+
+        img {
+          aspect-ratio: 2/1;
+        }
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+
+    &__item {
+      img {
+        object-position: center;
+        aspect-ratio: 2/1;
+      }
+
+      &:last-child {
+        grid-column: auto;
+      }
+    }
   }
 }

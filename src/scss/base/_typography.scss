@@ -6,6 +6,7 @@ h2,
 h3 {
   overflow: hidden;
   margin-bottom: 24px;
+  width: fit-content;
   font-weight: var(--fw-600);
   font-size: clamp(1.875rem, 1.1667rem + 3.1481vi, 4rem);
   line-height: 1.21;

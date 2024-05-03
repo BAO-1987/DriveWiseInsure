@@ -93,8 +93,6 @@
 
     &__item {
       min-height: 260px;
-      z-index: 2;
-
       &::after {
         bottom: -50px;
       }
@@ -116,6 +114,19 @@
         height: 32px;
       }
     }
+
+    &--option {
+      #{$root}__list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #{$root}__item {
+        min-height: 200px;
+        &:last-child {
+          grid-column: 2 span;
+        }
+      }
+    }
   }
 
   @include media(mobile-m) {
@@ -130,6 +141,18 @@
     h3 {
       margin-bottom: 16px;
       max-width: 100%;
+    }
+
+    &--option {
+      #{$root}__list {
+        grid-template-columns: 1fr;
+      }
+
+      #{$root}__item {
+        &:last-child {
+          grid-column: auto;
+        }
+      }
     }
   }
 }

@@ -61,5 +61,9 @@
     &__rows {
       grid-template-columns: 1fr;
     }
+
+    .btn {
+      max-width: 100%;
+    }
   }
 }

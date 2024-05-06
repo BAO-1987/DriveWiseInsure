@@ -26,6 +26,10 @@
     &[open] {
       summary {
         padding-bottom: 0;
+
+        &::after {
+          transform: scaleY(1);
+        }
       }
     }
   }
@@ -40,6 +44,18 @@
     line-height: 1.21;
     transition: color 0.3s linear;
     cursor: pointer;
+
+    &::after {
+      @include mask;
+
+      right: 25px;
+      top: 25px;
+      mask-image: url("../images/icons/chevron.svg");
+      width: 32px;
+      height: 32px;
+      transform: scaleY(-1);
+      transition: transform 0.3s linear;
+    }
 
     + div {
       padding: 8px 0 0;
@@ -71,7 +87,16 @@
     }
 
     summary {
-      padding: 16px 0;
+      padding: 16px 30px 16px 16px;
+
+      &::after {
+        right: 0;
+        top: 12px;
+      }
+
+      + div {
+        padding: 8px 25px 16px 16px;
+      }
     }
 
     h2 {

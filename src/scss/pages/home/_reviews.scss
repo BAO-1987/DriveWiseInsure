@@ -76,7 +76,9 @@
     }
 
     &__item {
-      min-height: 190px;
+      h3 {
+        align-self: flex-start;
+      }
 
       &:last-child {
         grid-column: auto;

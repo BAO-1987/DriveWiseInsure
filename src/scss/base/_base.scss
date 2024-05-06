@@ -49,6 +49,10 @@ body {
 .section {
   padding: rem(88) 0;
 
+  @include media(tablet-wide) {
+    padding: 45px 0;
+  }
+
   @include media(tablet) {
     padding: 30px 0;
   }

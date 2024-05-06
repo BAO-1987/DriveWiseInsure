@@ -14,18 +14,6 @@
       & textarea {
         margin-bottom: 25px;
       }
-
-      & input[type="tel"] {
-        position: relative;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 1px;
-          height: 100%;
-          background-color: red;
-          right: 20px;
-        }
-      }
     }
 
     input,
@@ -76,6 +64,11 @@
 
     .btn {
       max-width: 100%;
+    }
+
+    input,
+    textarea {
+      padding: 16px 10px;
     }
   }
 }
